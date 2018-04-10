@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/img4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        />
+    <ImageView
+        android:id="@+id/img5"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:layout_toRightOf="@+id/img4"
+        />
+
+    <TextView
+        android:text=" MX150 2G独显 FHD 指纹识别 Win10）银"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/img6"
+        android:maxLines="1"
+        android:ellipsize="marquee"
+        android:id="@+id/tit3" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/price3"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/colorAccent"
+        android:textSize="14dp"
+        android:layout_below="@+id/tit3"
+   />
+
+    <ImageView
+        android:id="@+id/img6"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignTop="@+id/img5"
+        android:layout_toEndOf="@+id/img5"
+        android:layout_marginStart="9dp" />
+</RelativeLayout>

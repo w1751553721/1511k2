@@ -1,0 +1,99 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.bwie.wangkui.mynewjdshopping"
+        minSdkVersion 17
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    //OKHttp依赖
+    compile 'com.squareup.okio:okio:1.7.0'
+
+    //网络请求数据
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+
+    //Gson解析
+    compile 'com.google.code.gson:gson:2.2.4'
+
+    //日志拦截器
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+
+    //Logger日志打印
+    compile 'com.orhanobut:logger:2.1.1'
+
+    //RecyclerView
+    compile 'com.android.support:recyclerview-v7:26.0.0-alpha1'
+
+    //图片加载框架picasso
+    compile 'com.squareup.picasso:picasso:2.5.1'
+
+    //图片加载框架glide
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+    //图片加载框架fresco
+    compile 'com.facebook.fresco:fresco:0.9.0'
+
+    //图片加载框架ImageLoader
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.4'
+
+    //EventBus通讯
+    compile 'org.greenrobot:eventbus:3.0.0'
+
+    //控件查找butterknife
+    compile 'com.jakewharton:butterknife:5.1.1'
+
+    //TabLayout
+    compile 'com.android.support:design:26.+'
+
+    //Banner
+    compile 'com.youth.banner:banner:1.4.9'
+
+    //网络请求框架Retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.0.1'
+
+    //资源转换 与Retrofit一起用
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+
+    //数据库GreenDao
+    compile 'org.greenrobot:greendao:3.0.1'
+    compile 'org.greenrobot:greendao-generator:3.0.0'
+
+    //RXjava
+    compile 'io.reactivex:rxandroid:1.0.1'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.1'
+
+    //二维码扫描
+    implementation 'com.github.yuzhiqiang1993:zxing:2.1.4'
+
+    //compile 'cn.yipianfengye.android:zxing-library:2.2'
+
+    //视频
+    compile 'fm.jiecao:jiecaovideoplayer:4.8.3'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    implementation project(':swiperefreshlayoutlibrary')
+}

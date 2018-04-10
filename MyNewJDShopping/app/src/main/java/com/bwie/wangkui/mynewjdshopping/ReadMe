@@ -1,0 +1,10 @@
+首页倒计时
+  1、首页展示图片  同时进行倒计时  倒计时结束后跳转到主界面  点击倒计时立刻跳转
+
+  问题：1、每次程序启动都进行倒计时 1>不添加数据库 2>添加数据库 在Activity的OnDestroy中清除数据库数据
+        2 、二次跳转  1>点击跳转时关闭倒计时  2>把activity的启动模式设置为singleTop
+   技术实现
+              倒计时 CountDownTimer
+              数据库 SharedPreferences
+
+
