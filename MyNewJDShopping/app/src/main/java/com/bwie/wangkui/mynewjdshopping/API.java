@@ -26,7 +26,7 @@ public class API {
     //当前子分类下的商品列表  pscid	string
     public static String good3 = "https://www.zhaoapi.cn/product/getProducts";
     //商品详情   pid	string
-    public static String good4 = "https://www.zhaoapi.cn/product/getProductDetail";
+    public static String good4 = "https://www.zhaoapi.cn/product/";
 
 
     /*

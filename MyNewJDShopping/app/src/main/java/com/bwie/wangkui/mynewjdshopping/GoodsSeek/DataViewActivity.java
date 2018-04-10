@@ -133,7 +133,7 @@ public class DataViewActivity extends BaseActivity<SeekPresenter> implements See
     }
     @Override
     public void showData(SeekBean seekBean) {
-        List<SeekBean.DataBean> data = seekBean.getData();
+        final List<SeekBean.DataBean> data = seekBean.getData();
         //判断是否有数据
          if(data.size()>0){
              if(page==1){
@@ -147,7 +147,7 @@ public class DataViewActivity extends BaseActivity<SeekPresenter> implements See
                 public void callBackPosition(int pos) {
                    //根据点击下标获得pid 带值 跳转到商品详情界面 请求数据
                     Intent intent = new Intent(DataViewActivity.this, GoodsDatails.class);
-                    intent.putExtra("pid",pos+"");
+                    intent.putExtra("pid",data.get(pos).getPid()+"");
                     startActivity(intent);
                 }
             });

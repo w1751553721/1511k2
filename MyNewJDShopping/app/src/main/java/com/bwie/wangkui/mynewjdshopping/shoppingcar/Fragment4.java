@@ -45,7 +45,7 @@ public class Fragment4 extends Fragment implements CarSeekinterface {
     TextView allprice;
     @InjectView(R.id.textView3)
     TextView textView3;
-    private String uid = "71";
+    private String uid = "57";
 
     private CarSeekPresenter presenter;
     private ExpandAdapter adapter;
@@ -57,9 +57,14 @@ public class Fragment4 extends Fragment implements CarSeekinterface {
         View view = View.inflate(getActivity(), R.layout.fragment4, null);
         EventBus.getDefault().register(this);
         presenter = new CarSeekPresenter(this);
-        presenter.relevance();
         ButterKnife.inject(this, view);
         return view;
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        presenter.relevance();
+
     }
 
     @Override

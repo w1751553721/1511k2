@@ -76,7 +76,6 @@ public class F1SeekActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.e("xx", "F1SeekActivity销毁了");
     }
 
 

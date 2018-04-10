@@ -2,15 +2,12 @@ package com.bwie.wangkui.mynewjdshopping.find.model;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
-import com.bwie.wangkui.mynewjdshopping.MainActivity;
 import com.bwie.wangkui.mynewjdshopping.R;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -43,9 +40,6 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MyViewHolder
         if(setUp1){
             Glide.with(context).load(data.get(position).getGroup().getLarge_cover().getUrl_list().get(0).getUrl()).into(holder.video.thumbImageView);
         }
-
-
-
     }
 
     @Override

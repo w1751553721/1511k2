@@ -48,12 +48,10 @@ public class MyVideoModel {
 
                     @Override
                     public void onError(Throwable e) {
-                        Log.e("333333","3333333"+e.getMessage());
                     }
 
                     @Override
                     public void onNext(VideoBean videoBean) {
-                        Log.e("333333","3333333");
                         callBackData.backData(videoBean);
                     }
                 });

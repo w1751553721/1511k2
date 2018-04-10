@@ -25,6 +25,7 @@ public class MyApplication extends Application {
         //初始化小型数据库
         uesr = getSharedPreferences("myapplicatin", MODE_PRIVATE);
       //  ZXingLibrary.initDisplayOpinion(this);
+
     }
     //获取Application全局对象
     public static Context getContext(){
