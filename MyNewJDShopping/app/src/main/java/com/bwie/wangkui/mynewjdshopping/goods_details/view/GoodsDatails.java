@@ -48,11 +48,19 @@ public class GoodsDatails extends AppCompatActivity implements DatailsIVew {
         String url = goodsDatailsBean.getData().getDetailUrl();
         WebSettings webSettings = web.getSettings();
         webSettings.setJavaScriptEnabled(true);
+
         web.setWebViewClient(new WebViewClient(){
+            //调用自身浏览器
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 view.loadUrl(url);
                 return true;
+            }
+            //当页面加载完毕时  给H5的加入购物车按钮添加点击事件
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                setWebImageClick();
             }
         });
         web.loadUrl(url);
@@ -60,32 +68,26 @@ public class GoodsDatails extends AppCompatActivity implements DatailsIVew {
         web.addJavascriptInterface(new JsCallJavaObj() {
             @JavascriptInterface
             @Override
-            public void showBigImg(String url) {
+            public void showBigImg() {
                 Toast.makeText(GoodsDatails.this, "你点击了加入购物车", Toast.LENGTH_SHORT).show();
                 //添加购物车
                 addCar("12575",pid);
             }
         },"jsCallJavaObj");
 
-        web.setWebViewClient(new WebViewClient(){
-            @Override
-            public void onPageFinished(WebView view, String url) {
-                super.onPageFinished(view, url);
-                setWebImageClick(view);
-            }
-        });
+
     }
     /**
      * Js調用Java接口
      */
     private interface JsCallJavaObj{
-        void showBigImg(String url);
+        void showBigImg();
     }
-    private  void setWebImageClick(WebView view) {
+    private  void setWebImageClick() {
         String jsCode="javascript:(function(){" +
                 "var btn=document.getElementById(\"addCartBtm\");" +
                 "btn.onclick=function(){" +
-                "window.jsCallJavaObj.showBigImg(this.src);" +
+                "window.jsCallJavaObj.showBigImg();" +
                 "}})()";
         web.loadUrl(jsCode);
     }
@@ -96,12 +98,9 @@ public class GoodsDatails extends AppCompatActivity implements DatailsIVew {
         build.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-
             }
-
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-
             }
         });
     }

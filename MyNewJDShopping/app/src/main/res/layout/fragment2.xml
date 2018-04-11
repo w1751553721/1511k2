@@ -2,11 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
-
     android:layout_height="match_parent"
     >
-
-
     <LinearLayout
         android:background="@color/huise"
         android:layout_width="match_parent"
@@ -16,12 +13,14 @@
             android:id="@+id/list"
             android:layout_width="80dp"
             android:dividerHeight="1dp"
+            android:layout_marginTop="20dp"
             android:choiceMode="singleChoice"
             android:layout_height="match_parent">
         </ListView>
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rlv"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         </android.support.v7.widget.RecyclerView>

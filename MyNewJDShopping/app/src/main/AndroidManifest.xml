@@ -43,9 +43,10 @@
         <activity android:name=".myinfo.view.RegisterActivity" />
         <activity
             android:name=".homepage.view.F1SeekActivity"
-            android:launchMode="singleInstance"></activity>
+            android:launchMode="singleInstance" />
         <activity android:name=".GoodsSeek.DataViewActivity" />
-        <activity android:name=".goods_details.view.GoodsDatails"></activity>
+        <activity android:name=".goods_details.view.GoodsDatails" />
+        <activity android:name=".myinfo.view.InfoSetting"></activity>
     </application>
 
 </manifest>

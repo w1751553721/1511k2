@@ -54,7 +54,6 @@ public class Fragment5 extends Fragment {
 
                 break;
             case R.id.textView3://登录注册
-                Log.e("====", "点击了登录");
                 startActivity(new Intent(getActivity(), LoginPage.class));
                 break;
         }
@@ -63,14 +62,12 @@ public class Fragment5 extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        Log.e("=====", "onDestroyView");
         ButterKnife.reset(this);
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        Log.e("=====", "onStart");
         //得到数据库存入的值
         SharedPreferences preferences = MyApplication.getSharedPreferences();
         long uid = preferences.getLong("uid", -1);
@@ -84,57 +81,9 @@ public class Fragment5 extends Fragment {
 
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        Log.e("=====", "onResume");
-    }
 
-    @Override
-    public void onPause() {
-        super.onPause();
-        Log.e("=====", "onPause");
-    }
 
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        Log.e("=====", "onSaveInstanceState");
-    }
 
-    @Override
-    public void onStop() {
-        super.onStop();
-        Log.e("=====", "onStop");
-    }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        Log.e("=====", "onDestroy");
-    }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        Log.e("=====", "onDetach");
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        Log.e("=====", "onAttach");
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Log.e("=====", "onCreate");
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        Log.e("=====", "onActivityCreated");
-    }
 }
