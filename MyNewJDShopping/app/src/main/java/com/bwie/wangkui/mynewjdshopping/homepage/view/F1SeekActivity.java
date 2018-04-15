@@ -69,7 +69,6 @@ public class F1SeekActivity extends AppCompatActivity implements View.OnClickLis
         //先查询数据库
         dao = new SqDao(this);
         initFlowView();
-
         initHistoryView();
     }
 
@@ -77,8 +76,6 @@ public class F1SeekActivity extends AppCompatActivity implements View.OnClickLis
     protected void onDestroy() {
         super.onDestroy();
     }
-
-
 
     private void initFlowView() {
         mInflater = LayoutInflater.from(this);
@@ -99,8 +96,7 @@ public class F1SeekActivity extends AppCompatActivity implements View.OnClickLis
             tv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //加入搜索历史纪录记录
-                    Toast.makeText(F1SeekActivity.this, str, Toast.LENGTH_LONG).show();
+
                 }
             });
             mFlowLayout.addView(tv);
@@ -115,7 +111,7 @@ public class F1SeekActivity extends AppCompatActivity implements View.OnClickLis
         input = (EditText) findViewById(R.id.edit);
         btn_search = (Button) findViewById(R.id.seek);
         btn_search.setOnClickListener(this);
-
+        img1.setOnClickListener(this);
         mPref = getSharedPreferences("input", Activity.MODE_PRIVATE);
         mType = getIntent().getStringExtra(EXTRA_KEY_TYPE);
         String keyword = getIntent().getStringExtra(EXTRA_KEY_KEYWORD);
@@ -143,7 +139,6 @@ public class F1SeekActivity extends AppCompatActivity implements View.OnClickLis
                     mSearchHistoryLl.setVisibility(View.GONE);
                 }
             }
-
             @Override
             public void afterTextChanged(Editable s) {
 
@@ -216,7 +211,6 @@ public class F1SeekActivity extends AppCompatActivity implements View.OnClickLis
         mHistoryKeywords.clear();
         mArrAdapter.notifyDataSetChanged();
         mSearchHistoryLl.setVisibility(View.GONE);
-        Toast.makeText(F1SeekActivity.this, "清楚搜索历史成功", Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -225,21 +219,20 @@ public class F1SeekActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.seek:
                 String keywords = input.getText().toString();
                 if (!TextUtils.isEmpty(keywords)) {
-                    Toast.makeText(F1SeekActivity.this, keywords + "保存成功", Toast.LENGTH_LONG).show();
                     save();
+                    Intent intent = new Intent(F1SeekActivity.this, DataViewActivity.class);
+                    intent.putExtra("seek", keywords);
+                    startActivity(intent);
+                    finish();
                 } else {
                     Toast.makeText(F1SeekActivity.this, "请输入搜索内容", Toast.LENGTH_LONG).show();
                 }
-                Intent intent = new Intent(F1SeekActivity.this, DataViewActivity.class);
-                intent.putExtra("seek", keywords);
-                startActivity(intent);
-                finish();
                 break;
             case R.id.clear_history_btn:
                 cleanHistory();
                 break;
                 case R.id.img1:
-                finish();
+                  finish();
                 break;
             default:
                 break;

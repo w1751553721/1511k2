@@ -1,5 +1,6 @@
 package com.bwie.wangkui.mynewjdshopping.goods_details.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -38,13 +39,13 @@ public class GoodsDatails extends AppCompatActivity implements DatailsIVew {
         setContentView(R.layout.activity_goods_datails);
         ButterKnife.inject(this);
         pid = getIntent().getStringExtra("pid");
-        Toast.makeText(this, pid +"", Toast.LENGTH_SHORT).show();
+
         GoodsDatailsPresenter presenter = new GoodsDatailsPresenter(this);
         presenter.guanlian(pid, source);
     }
 
     @Override
-    public void showData(GoodsDatailsBean goodsDatailsBean) {
+    public void showData(final GoodsDatailsBean goodsDatailsBean) {
         String url = goodsDatailsBean.getData().getDetailUrl();
         WebSettings webSettings = web.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -69,9 +70,22 @@ public class GoodsDatails extends AppCompatActivity implements DatailsIVew {
             @JavascriptInterface
             @Override
             public void showBigImg() {
-                Toast.makeText(GoodsDatails.this, "你点击了加入购物车", Toast.LENGTH_SHORT).show();
+                //跳转到确认订单
+                Intent intent = new Intent(GoodsDatails.this, ArrirmOrder.class);
+                //商品名称
+                intent.putExtra("title",goodsDatailsBean.getData().getTitle());
+                //商品图片
+                intent.putExtra("images",goodsDatailsBean.getData().getImages());
+                //商品价格
+                intent.putExtra("price",goodsDatailsBean.getData().getBargainPrice());
+                startActivity(intent);
+                finish();
+
+
+
+
                 //添加购物车
-                addCar("12575",pid);
+             //   addCar("12575",pid);
             }
         },"jsCallJavaObj");
 
@@ -85,7 +99,7 @@ public class GoodsDatails extends AppCompatActivity implements DatailsIVew {
     }
     private  void setWebImageClick() {
         String jsCode="javascript:(function(){" +
-                "var btn=document.getElementById(\"addCartBtm\");" +
+                "var btn=document.getElementById(\"directorderBtm\");" +
                 "btn.onclick=function(){" +
                 "window.jsCallJavaObj.showBigImg();" +
                 "}})()";

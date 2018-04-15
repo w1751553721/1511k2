@@ -1,6 +1,5 @@
 package com.bwie.wangkui.mynewjdshopping.homepage.view;
 
-import android.Manifest;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -36,10 +35,10 @@ import com.bwie.wangkui.mynewjdshopping.homepage.presenter.BannerPresenter;
 import com.bwie.wangkui.mynewjdshopping.homepage.presenter.GridPresenter;
 import com.bwie.wangkui.mynewjdshopping.homepage.view.myinterface.BannerView;
 import com.bwie.wangkui.mynewjdshopping.homepage.view.myinterface.GridInterface;
-
+import com.uuzuche.lib_zxing.activity.CaptureActivity;
+import com.uuzuche.lib_zxing.activity.CodeUtils;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
-import com.yzq.zxinglibrary.android.CaptureActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -56,6 +55,7 @@ import butterknife.OnClick;
  */
 
 public class Fragment1 extends Fragment implements BannerView {
+
     @InjectView(R.id.banner)
     Banner banner;
     @InjectView(R.id.gifimg)
@@ -81,13 +81,7 @@ public class Fragment1 extends Fragment implements BannerView {
         View view = View.inflate(getActivity(), R.layout.fragment1, null);
         ButterKnife.inject(this, view);
         //透明状态栏
-        if (Build.VERSION.SDK_INT >= 21) {
-            View decorView = getActivity().getWindow().getDecorView();
-            int option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
-            decorView.setSystemUiVisibility(option);
-            getActivity().getWindow().setStatusBarColor(Color.TRANSPARENT);
-        }
+
 
         //请求数据
         getData();
@@ -143,7 +137,6 @@ public class Fragment1 extends Fragment implements BannerView {
                 String format = myformat.format(new Date(l));
                 miaotime.setText("京东秒杀：" + format);
             }
-
             @Override
             public void onFinish() {
             }
@@ -221,8 +214,13 @@ public class Fragment1 extends Fragment implements BannerView {
                 if (bundle == null) {
                     return;
                 }
-                    String result = bundle.getString("result_string");
+                if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_SUCCESS) {
+                    String result = bundle.getString(CodeUtils.RESULT_STRING);
                     Toast.makeText(getActivity(), "解析结果:" + result, Toast.LENGTH_LONG).show();
+                } else if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_FAILED) {
+                    Toast.makeText(getActivity(), "解析二维码失败", Toast.LENGTH_LONG).show();
+                }
+
 
 
             }

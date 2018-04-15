@@ -52,7 +52,7 @@ public class Goods3Adapter extends RecyclerView.Adapter<Goods3Adapter.MyViewHold
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        Picasso.with(context).load(list.get(position).getIcon()).placeholder(R.mipmap.ic_launcher).into(holder.g3img);
+        Picasso.with(context).load(list.get(position).getIcon()).into(holder.g3img);
           holder.tit.setText(list.get(position).getName());
     }
 

@@ -1,6 +1,11 @@
 package com.bwie.wangkui.mynewjdshopping;
 
+import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.RadioGroup;
 
@@ -9,6 +14,7 @@ import com.bwie.wangkui.mynewjdshopping.classifly.View.Fragment2;
 import com.bwie.wangkui.mynewjdshopping.find.view.Fragment3;
 import com.bwie.wangkui.mynewjdshopping.homepage.view.Fragment1;
 import com.bwie.wangkui.mynewjdshopping.myinfo.view.Fragment5;
+import com.bwie.wangkui.mynewjdshopping.myinfo.view.LoginPage;
 import com.bwie.wangkui.mynewjdshopping.shoppingcar.Fragment4;
 
 public class MainActivity extends BaseActivity {
@@ -66,6 +72,13 @@ public class MainActivity extends BaseActivity {
                 }
             }
         });
+        if (Build.VERSION.SDK_INT >= 21) {
+            View decorView = this.getWindow().getDecorView();
+            int option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
+            decorView.setSystemUiVisibility(option);
+            this.getWindow().setStatusBarColor(Color.TRANSPARENT);
+        }
     }
 
     @Override
@@ -77,28 +90,6 @@ public class MainActivity extends BaseActivity {
     protected void initData() {
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

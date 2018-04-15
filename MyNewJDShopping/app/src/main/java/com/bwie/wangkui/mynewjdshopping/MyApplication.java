@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.uuzuche.lib_zxing.activity.ZXingLibrary;
 
 
 /**
@@ -24,7 +25,7 @@ public class MyApplication extends Application {
         context = this;
         //初始化小型数据库
         uesr = getSharedPreferences("myapplicatin", MODE_PRIVATE);
-      //  ZXingLibrary.initDisplayOpinion(this);
+        ZXingLibrary.initDisplayOpinion(this);
 
     }
     //获取Application全局对象

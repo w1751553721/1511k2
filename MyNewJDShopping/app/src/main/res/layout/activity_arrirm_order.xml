@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bwie.wangkui.mynewjdshopping.goods_details.view.ArrirmOrder">
+
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="11dp"
+        android:text="姓名" />
+
+    <TextView
+        android:id="@+id/tel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/name"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@+id/name"
+        android:layout_marginLeft="10dp"
+        android:text="手机号" />
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/name"
+        android:layout_below="@+id/name"
+        android:layout_marginTop="16dp"
+        android:text="地址" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/address"
+        android:background="@color/huise"
+        android:layout_marginTop="12dp"
+        />
+
+    <ImageView
+        android:id="@+id/goodsimg"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignStart="@+id/address"
+        android:layout_below="@+id/textView21"
+        android:layout_marginTop="25dp"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/goodstitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/goodsimg"
+        android:layout_toRightOf="@id/goodsimg"
+        android:layout_marginLeft="20dp"
+        android:maxEms="10"
+
+        android:text="地方那时间快递发货老师讲的客户反馈收到就好估计是都会根据口红" />
+
+    <TextView
+        android:id="@+id/goodsprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/goodsimg"
+        android:layout_below="@+id/goodstitle"
+        android:layout_alignStart="@+id/goodstitle"
+         />
+
+    <View
+        android:layout_below="@+id/goodsprice"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/saddlebrown"
+        android:id="@+id/view">
+    </View>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:background="@color/red"
+        android:textColor="@color/white"
+        android:text="确认订单" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button6"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="12dp"
+        android:text="优惠券" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/textView14"
+        android:layout_marginEnd="20dp"
+        android:textColor="@color/red"
+        android:text="无优惠券可用" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView14"
+        android:layout_centerVertical="true"
+        android:text="购买数量" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:layout_alignBottom="@+id/textView16"
+        android:layout_toStartOf="@+id/button4"
+        android:text="-" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:layout_alignBaseline="@+id/textView16"
+        android:layout_alignBottom="@+id/textView16"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="12dp"
+        android:text="+" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button6"
+        android:layout_toEndOf="@+id/button6"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="5dp"
+        android:textSize="18dp"
+        android:text="1" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView16"
+        android:layout_below="@+id/button7"
+        android:layout_marginTop="20dp"
+        android:text="商品金额" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView23"
+        android:layout_alignStart="@+id/textView15"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/red" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView24"
+        android:layout_toEndOf="@+id/textView24"
+        android:text="98.80元"
+        android:textColor="@color/red_normal" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/goodsimg"
+        android:layout_marginBottom="9dp"
+        android:text="实付款"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView26"
+        android:layout_marginStart="7dp"
+        android:layout_toEndOf="@+id/textView26"
+        android:text="98.80元"
+        android:textColor="@color/red_pressed" />
+</RelativeLayout>

@@ -36,10 +36,10 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MyViewHolder
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        boolean setUp1 = holder.video.setUp(data.get(position).getGroup().getMp4_url(), JCVideoPlayer.SCREEN_LAYOUT_LIST, data.get(position).getGroup().getContent());
-        if(setUp1){
-            Glide.with(context).load(data.get(position).getGroup().getLarge_cover().getUrl_list().get(0).getUrl()).into(holder.video.thumbImageView);
-        }
+//        boolean setUp1 = holder.video.setUp(data.get(position).getGroup().getMp4_url(), JCVideoPlayer.SCREEN_LAYOUT_LIST, data.get(position).getGroup().getContent());
+//        if(setUp1){
+//            Glide.with(context).load(data.get(position).getGroup().getLarge_cover().getUrl_list().get(0).getUrl()).into(holder.video.thumbImageView);
+//        }
     }
 
     @Override

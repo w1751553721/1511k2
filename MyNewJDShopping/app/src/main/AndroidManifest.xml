@@ -13,6 +13,8 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
@@ -46,7 +48,10 @@
             android:launchMode="singleInstance" />
         <activity android:name=".GoodsSeek.DataViewActivity" />
         <activity android:name=".goods_details.view.GoodsDatails" />
-        <activity android:name=".myinfo.view.InfoSetting"></activity>
+        <activity android:name=".myinfo.view.InfoSetting" />
+        <activity android:name=".goods_details.view.ArrirmOrder" />
+        <activity android:name=".goods_details.view.ConfirmPment"></activity>
+
     </application>
 
 </manifest>
