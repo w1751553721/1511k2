@@ -7,10 +7,12 @@
     <TextView
         android:id="@+id/goodsnum"
         android:textStyle="bold"
-        android:text="购物车"
+        android:text="购物车                      编辑"
         android:gravity="center"
         android:layout_marginTop="25dp"
         android:layout_width="match_parent"
+        android:layout_marginLeft="120dp"
+        android:maxLines="1"
         android:layout_height="30dp" />
     <ExpandableListView
         android:id="@+id/exp"

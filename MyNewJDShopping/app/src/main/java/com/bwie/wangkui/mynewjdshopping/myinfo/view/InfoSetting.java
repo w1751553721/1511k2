@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.bigkoo.pickerview.OptionsPickerView;
 import com.bwie.wangkui.mynewjdshopping.MyApplication;
+
 import com.bwie.wangkui.mynewjdshopping.R;
 import com.bwie.wangkui.mynewjdshopping.myinfo.model.bean.JsonBean2;
 import com.bwie.wangkui.mynewjdshopping.myinfo.model.bean.JsonFileReader;

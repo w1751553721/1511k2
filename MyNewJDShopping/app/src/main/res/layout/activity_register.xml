@@ -11,6 +11,7 @@
         android:inputType="textPersonName"
         android:hint="请输入手机号"
         android:ems="10"
+
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp"

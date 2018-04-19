@@ -80,10 +80,6 @@ public class GoodsDatails extends AppCompatActivity implements DatailsIVew {
                 intent.putExtra("price",goodsDatailsBean.getData().getBargainPrice());
                 startActivity(intent);
                 finish();
-
-
-
-
                 //添加购物车
              //   addCar("12575",pid);
             }

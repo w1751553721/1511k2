@@ -88,8 +88,6 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava:2.0.1'
 
     //二维码扫描
-    //implementation 'com.github.yuzhiqiang1993:zxing:2.1.4'
-
     compile 'cn.yipianfengye.android:zxing-library:2.2'
 
     //视频
@@ -98,4 +96,6 @@ dependencies {
     implementation project(':swiperefreshlayoutlibrary')
 
     compile 'com.contrarywind:Android-PickerView:3.2.5'
+
+
 }
